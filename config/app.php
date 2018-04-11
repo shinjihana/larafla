@@ -151,6 +151,13 @@ return [
          * Package Service Providers...
          */
 
+        /**
+         * Flash Service Provider
+         */
+        Anki\UsersMan\ServiceProvider::class,
+        Happy\FlashsMan\ServiceProvider::class,
+        Happy\CommonsMan\ServiceProvider::class,
+        
         /*
          * Application Service Providers...
          */

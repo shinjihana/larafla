@@ -413,6 +413,9 @@ class ComposerStaticInit1b75bcf3df50594581a7cd25e6a818d6
     );
 
     public static $classMap = array (
+        'Anki\\CommonsMan\\ServiceProvider' => __DIR__ . '/../..' . '/anki/CommonsMan/ServiceProvider.php',
+        'Anki\\FlashsMan\\ServiceProvider' => __DIR__ . '/../..' . '/anki/FlashsMan/ServiceProvider.php',
+        'Anki\\UsersMan\\ServiceProvider' => __DIR__ . '/../..' . '/anki/UsersMan/ServiceProvider.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',

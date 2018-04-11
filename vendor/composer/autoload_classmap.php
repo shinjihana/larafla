@@ -6,6 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Anki\\CommonsMan\\ServiceProvider' => $baseDir . '/anki/CommonsMan/ServiceProvider.php',
+    'Anki\\FlashsMan\\ServiceProvider' => $baseDir . '/anki/FlashsMan/ServiceProvider.php',
+    'Anki\\UsersMan\\ServiceProvider' => $baseDir . '/anki/UsersMan/ServiceProvider.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
