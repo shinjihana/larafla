@@ -16,3 +16,10 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/login', function (){
+    $token = 'hoachan';
+    return response()->json($token);
+});
+
+Route::post('/login', 'ApiAuth\LoginController@login');
