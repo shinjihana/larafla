@@ -12,8 +12,15 @@ use App\User;
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
+
+
     /**
-     * 
+     * Handle a login request to the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Http\JsonResponse
+     *
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function login(Request $request)
     {
@@ -37,12 +44,15 @@ class LoginController extends Controller
         // user surpasses their maximum number of attempts they will get locked out.
         $this->incrementLoginAttempts($request);
 
-        if ($this->validator->fails()) {
-            return response()->json("sss");
-        }
         return $this->sendFailedLoginResponse($request);
     }
 
+    /**
+     * Send the response after the user was authenticated.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     protected function sendLoginResponse(Request $request)
     {
         $this->clearLoginAttempts($request);
@@ -51,7 +61,7 @@ class LoginController extends Controller
                 ?: redirect()->intended($this->redirectPath());
     }
 
-        /**
+    /**
      * The user has been authenticated.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -60,7 +70,6 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
-        return auth()->user();
+        return Auth()->user();
     }
-
 }

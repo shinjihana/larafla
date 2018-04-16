@@ -20,6 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/login', function (){
     $token = 'hoachan';
     return response()->json($token);
-});
+})->middleware('auth:api');
 
 Route::post('/login', 'ApiAuth\LoginController@login');
