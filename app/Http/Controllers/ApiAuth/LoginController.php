@@ -9,10 +9,22 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use App\User;
 
+use Anki\UsersMan\Http\Resources\UserResource;
+
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
 
+    
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => 'login']);
+    }
 
     /**
      * Handle a login request to the application.
@@ -62,6 +74,21 @@ class LoginController extends Controller
     }
 
     /**
+     * Validate the user login request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return void
+     */
+    protected function validateLogin(Request $request)
+    {
+        $this->validate($request, [
+            $this->username() => 'required|string',
+            'password' => 'required|string',
+            'token'    => 'required',
+        ]);
+    }
+
+    /**
      * The user has been authenticated.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -70,6 +97,8 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
-        return Auth()->user();
+        $token = $user->createToken($user->name)->accessToken;
+        $user->withAccessToken($token);
+        return new UserResource($user);
     }
 }
