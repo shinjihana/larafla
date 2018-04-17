@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/login', function (){
     $user = \App\User::find(3);
 
-    return $user;
+    // return $user;
     return view('debug.layout', compact('user'));
 });
 

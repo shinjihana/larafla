@@ -15,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        \DB::connection()->enableQueryLog();
         Schema::defaultStringLength(191);
     }
 

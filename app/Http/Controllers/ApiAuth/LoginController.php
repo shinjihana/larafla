@@ -99,6 +99,8 @@ class LoginController extends Controller
     {
         $token = $user->createToken($user->name)->accessToken;
         $user->withAccessToken($token);
+
+        return view('debug.layout');
         return new UserResource($user);
     }
 }
