@@ -425,6 +425,7 @@ class ComposerStaticInit1b75bcf3df50594581a7cd25e6a818d6
     public static $classMap = array (
         'Anki\\CommonsMan\\ServiceProvider' => __DIR__ . '/../..' . '/anki/CommonsMan/ServiceProvider.php',
         'Anki\\FlashsMan\\ServiceProvider' => __DIR__ . '/../..' . '/anki/FlashsMan/ServiceProvider.php',
+        'Anki\\UsersMan\\Http\\Resources\\UserCollection' => __DIR__ . '/../..' . '/anki/UsersMan/src/Http/Resources/UserCollection.php',
         'Anki\\UsersMan\\Http\\Resources\\UserResource' => __DIR__ . '/../..' . '/anki/UsersMan/src/Http/Resources/UserResource.php',
         'Anki\\UsersMan\\ServiceProvider' => __DIR__ . '/../..' . '/anki/UsersMan/ServiceProvider.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',

@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Anki\\CommonsMan\\ServiceProvider' => $baseDir . '/anki/CommonsMan/ServiceProvider.php',
     'Anki\\FlashsMan\\ServiceProvider' => $baseDir . '/anki/FlashsMan/ServiceProvider.php',
+    'Anki\\UsersMan\\Http\\Resources\\UserCollection' => $baseDir . '/anki/UsersMan/src/Http/Resources/UserCollection.php',
     'Anki\\UsersMan\\Http\\Resources\\UserResource' => $baseDir . '/anki/UsersMan/src/Http/Resources/UserResource.php',
     'Anki\\UsersMan\\ServiceProvider' => $baseDir . '/anki/UsersMan/ServiceProvider.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',

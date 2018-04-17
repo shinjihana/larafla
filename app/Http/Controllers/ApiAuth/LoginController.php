@@ -10,11 +10,11 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\User;
 
 use Anki\UsersMan\Http\Resources\UserResource;
+use Anki\UsersMan\Http\Resources\UserCollection;
 
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
-
     
     /**
      * Create a new controller instance.
